@@ -1,0 +1,636 @@
+$grid-width: 100%;
+$gutter-vertical: 20px;
+$gutter-horizontal: 20px;
+$container-flex-min-lat-spacing: 40px;
+
+$xl: 1280px;
+$lg: 1200px;
+$md: 992px;
+$sm: 768px;
+$xs: 576px;
+
+@function calcGridCellWidthWithGutter($col-number, $col-total, $gutter-horizontal) {
+  @return calc(((100% - (#{$col-total} * #{$gutter-horizontal})) / #{$col-total}) * #{$col-number} + ((#{$col-number} - 1) * #{$gutter-horizontal}));
+}
+@function calcGridCellWidthNoGutter($col-number, $col-total) {
+  @return calc(#{$col-number} * 100% / #{$col-total});
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container-flex {
+  display: block;
+  margin: 0 auto;
+  max-width: $lg;
+  padding:0 $gutter-horizontal;
+}
+
+.row {
+  display: block;
+  margin: 0 -1*$gutter-horizontal 0 0;
+  @include clearfix;
+  [class^="col-"] {
+    float: left;
+    opacity: 1;
+    margin: 0 $gutter-horizontal $gutter-vertical 0;
+    &.float-right, &.f-r {
+      float: right;
+      margin-left: $gutter-horizontal;
+    }
+  }
+  .col-show {
+    display: block;
+  }
+  .col-invisible {
+    opacity: 0;
+  }
+  .col-0 {
+    display: none;
+  }
+  .col-1 {
+    width: calcGridCellWidthWithGutter(1, 12, $gutter-horizontal);
+  }
+  .col-2 {
+    width: calcGridCellWidthWithGutter(2, 12, $gutter-horizontal);
+  }
+  .col-3 {
+    width: calcGridCellWidthWithGutter(3, 12, $gutter-horizontal);
+  }
+  .col-4 {
+    width: calcGridCellWidthWithGutter(4, 12, $gutter-horizontal);
+  }
+  .col-5 {
+    width: calcGridCellWidthWithGutter(5, 12, $gutter-horizontal);
+  }
+  .col-6 {
+    width: calcGridCellWidthWithGutter(6, 12, $gutter-horizontal);
+  }
+  .col-7 {
+    width: calcGridCellWidthWithGutter(7, 12, $gutter-horizontal);
+  }
+  .col-8 {
+    width: calcGridCellWidthWithGutter(8, 12, $gutter-horizontal);
+  }
+  .col-9 {
+    width: calcGridCellWidthWithGutter(9, 12, $gutter-horizontal);
+  }
+  .col-10 {
+    width: calcGridCellWidthWithGutter(10, 12, $gutter-horizontal);
+  }
+  .col-11 {
+    width: calcGridCellWidthWithGutter(11, 12, $gutter-horizontal);
+  }
+  .col-12 {
+    width: calc(100% - #{$gutter-horizontal});
+  }
+  .col-1-7 {
+    width: calcGridCellWidthWithGutter(1, 7, $gutter-horizontal);
+  }
+  .col-2-7 {
+    width: calcGridCellWidthWithGutter(2, 7, $gutter-horizontal);
+  }
+  .col-3-7 {
+    width: calcGridCellWidthWithGutter(3, 7, $gutter-horizontal);
+  }
+  .col-4-7 {
+    width: calcGridCellWidthWithGutter(4, 7, $gutter-horizontal);
+  }
+  .col-5-7 {
+    width: calcGridCellWidthWithGutter(5, 7, $gutter-horizontal);
+  }
+  .col-6-7 {
+    width: calcGridCellWidthWithGutter(6, 7, $gutter-horizontal);
+  }
+  .col-7-7 {
+    width: 100%;
+  }
+}
+
+.row-no-gutters {
+  display: block;
+  margin: 0;
+  @include clearfix;
+  [class^="col-"] {
+    float: left;
+    opacity: 1;
+    margin: 0;
+    &.float-right, &.f-r {
+      float: right;
+      margin-left: $gutter-horizontal;
+    }
+  }
+  .col-show {
+    display: block;
+  }
+  .col-invisible {
+    opacity: 0;
+  }
+  .col-0 {
+    display: none;
+  }
+  .col-1 {
+    width: calcGridCellWidthNoGutter(1, 12);
+  }
+  .col-2 {
+    width: calcGridCellWidthNoGutter(2, 12);
+  }
+  .col-3 {
+    width: calcGridCellWidthNoGutter(3, 12);
+  }
+  .col-4 {
+    width: calcGridCellWidthNoGutter(4, 12);
+  }
+  .col-5 {
+    width: calcGridCellWidthNoGutter(5, 12);
+  }
+  .col-6 {
+    width: calcGridCellWidthNoGutter(6, 12);
+  }
+  .col-7 {
+    width: calcGridCellWidthNoGutter(7, 12);
+  }
+  .col-8 {
+    width: calcGridCellWidthNoGutter(8, 12);
+  }
+  .col-9 {
+    width: calcGridCellWidthNoGutter(9, 12);
+  }
+  .col-10 {
+    width: calcGridCellWidthNoGutter(10, 12);
+  }
+  .col-11 {
+    width: calcGridCellWidthNoGutter(11, 12);
+  }
+  .col-12 {
+    width: 100%;
+  }
+  .col-1-7 {
+    width: calcGridCellWidthNoGutter(1, 7);
+  }
+  .col-2-7 {
+    width: calcGridCellWidthNoGutter(2, 7);
+  }
+  .col-3-7 {
+    width: calcGridCellWidthNoGutter(3, 7);
+  }
+  .col-4-7 {
+    width: calcGridCellWidthNoGutter(4, 7);
+  }
+  .col-5-7 {
+    width: calcGridCellWidthNoGutter(5, 7);
+  }
+  .col-6-7 {
+    width: calcGridCellWidthNoGutter(6, 7);
+  }
+  .col-7-7 {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: $lg + $container-flex-min-lat-spacing) {
+  .container-flex {
+    max-width: calc(#{$md} - #{$container-flex-min-lat-spacing});
+  }
+  .row {
+    [class*="col-lg-"] {
+      display: block;
+      opacity: 1;
+    }
+    .col-lg-show {
+      display: block;
+    }
+    .col-lg-invisible {
+      opacity: 0;
+    }
+    .col-lg-0 {
+      display: none;
+    }
+    .col-lg-1 {
+      width: calcGridCellWidthWithGutter(1, 12, $gutter-horizontal);
+    }
+    .col-lg-2 {
+      width: calcGridCellWidthWithGutter(2, 12, $gutter-horizontal);
+    }
+    .col-lg-3 {
+      width: calcGridCellWidthWithGutter(3, 12, $gutter-horizontal);
+    }
+    .col-lg-4 {
+      width: calcGridCellWidthWithGutter(4, 12, $gutter-horizontal);
+    }
+    .col-lg-5 {
+      width: calcGridCellWidthWithGutter(5, 12, $gutter-horizontal);
+    }
+    .col-lg-6 {
+      width: calcGridCellWidthWithGutter(6, 12, $gutter-horizontal);
+    }
+    .col-lg-7 {
+      width: calcGridCellWidthWithGutter(7, 12, $gutter-horizontal);
+    }
+    .col-lg-8 {
+      width: calcGridCellWidthWithGutter(8, 12, $gutter-horizontal);
+    }
+    .col-lg-9 {
+      width: calcGridCellWidthWithGutter(9, 12, $gutter-horizontal);
+    }
+    .col-lg-10 {
+      width: calcGridCellWidthWithGutter(10, 12, $gutter-horizontal);
+    }
+    .col-lg-11 {
+      width: calcGridCellWidthWithGutter(11, 12, $gutter-horizontal);
+    }
+    .col-lg-12 {
+      width: calc(100% - #{$gutter-horizontal});
+    }
+  }
+  .row-no-gutters {
+    [class*="col-lg-"] {
+      display: block;
+      opacity: 1;
+    }
+    .col-lg-show {
+      display: block;
+    }
+    .col-lg-invisible {
+      opacity: 0;
+    }
+    .col-lg-0 {
+      display: none;
+    }
+    .col-lg-1 {
+      width: calcGridCellWidthNoGutter(1, 12);
+    }
+    .col-lg-2 {
+      width: calcGridCellWidthNoGutter(2, 12);
+    }
+    .col-lg-3 {
+      width: calcGridCellWidthNoGutter(3, 12);
+    }
+    .col-lg-4 {
+      width: calcGridCellWidthNoGutter(4, 12);
+    }
+    .col-lg-5 {
+      width: calcGridCellWidthNoGutter(5, 12);
+    }
+    .col-lg-6 {
+      width: calcGridCellWidthNoGutter(6, 12);
+    }
+    .col-lg-7 {
+      width: calcGridCellWidthNoGutter(7, 12);
+    }
+    .col-lg-8 {
+      width: calcGridCellWidthNoGutter(8, 12);
+    }
+    .col-lg-9 {
+      width: calcGridCellWidthNoGutter(9, 12);
+    }
+    .col-lg-10 {
+      width: calcGridCellWidthNoGutter(10, 12);
+    }
+    .col-lg-11 {
+      width: calcGridCellWidthNoGutter(11, 12);
+    }
+    .col-lg-12 {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: $md) {
+  .container-flex {
+    max-width: calc(#{$sm} - #{$container-flex-min-lat-spacing});
+  }
+  .row {
+    [class*="col-md-"] {
+      display: inherit;
+      opacity: 1;
+    }
+    .col-md-show {
+      display: block;
+    }
+    .col-md-invisible {
+      opacity: 0;
+    }
+    .col-md-0 {
+      display: none;
+    }
+    .col-md-1 {
+      width: calcGridCellWidthWithGutter(1, 12, $gutter-horizontal);
+    }
+    .col-md-2 {
+      width: calcGridCellWidthWithGutter(2, 12, $gutter-horizontal);
+    }
+    .col-md-3 {
+      width: calcGridCellWidthWithGutter(3, 12, $gutter-horizontal);
+    }
+    .col-md-4 {
+      width: calcGridCellWidthWithGutter(4, 12, $gutter-horizontal);
+    }
+    .col-md-5 {
+      width: calcGridCellWidthWithGutter(5, 12, $gutter-horizontal);
+    }
+    .col-md-6 {
+      display: block;
+      width: calcGridCellWidthWithGutter(6, 12, $gutter-horizontal);
+    }
+    .col-md-7 {
+      width: calcGridCellWidthWithGutter(7, 12, $gutter-horizontal);
+    }
+    .col-md-8 {
+      width: calcGridCellWidthWithGutter(8, 12, $gutter-horizontal);
+    }
+    .col-md-9 {
+      width: calcGridCellWidthWithGutter(9, 12, $gutter-horizontal);
+    }
+    .col-md-10 {
+      width: calcGridCellWidthWithGutter(10, 12, $gutter-horizontal);
+    }
+    .col-md-11 {
+      width: calcGridCellWidthWithGutter(11, 12, $gutter-horizontal);
+    }
+    .col-md-12 {
+      width: calc(100% - #{$gutter-horizontal});
+    }
+  }
+  .row-no-gutters {
+    [class*="col-md-"] {
+      display: inherit;
+      opacity: 1;
+    }
+    .col-md-show {
+      display: block;
+    }
+    .col-md-invisible {
+      opacity: 0;
+    }
+    .col-md-0 {
+      display: none;
+    }
+    .col-md-1 {
+      width: calcGridCellWidthNoGutter(1, 12);
+    }
+    .col-md-2 {
+      width: calcGridCellWidthNoGutter(2, 12);
+    }
+    .col-md-3 {
+      width: calcGridCellWidthNoGutter(3, 12);
+    }
+    .col-md-4 {
+      width: calcGridCellWidthNoGutter(4, 12);
+    }
+    .col-md-5 {
+      width: calcGridCellWidthNoGutter(5, 12);
+    }
+    .col-md-6 {
+      display: block;
+      width: calcGridCellWidthNoGutter(6, 12);
+    }
+    .col-md-7 {
+      width: calcGridCellWidthNoGutter(7, 12);
+    }
+    .col-md-8 {
+      width: calcGridCellWidthNoGutter(8, 12);
+    }
+    .col-md-9 {
+      width: calcGridCellWidthNoGutter(9, 12);
+    }
+    .col-md-10 {
+      width: calcGridCellWidthNoGutter(10, 12);
+    }
+    .col-md-11 {
+      width: calcGridCellWidthNoGutter(11, 12);
+    }
+    .col-md-12 {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: $sm) {
+  .container-flex {
+    max-width: calc(#{$xs} - #{$container-flex-min-lat-spacing});
+  }
+  .row {
+    [class*="col-sm-"] {
+      display: inherit;
+      opacity: 1;
+    }
+    .col-sm-show {
+      display: block;
+    }
+    .col-sm-invisible {
+      opacity: 0;
+    }
+    .col-sm-0 {
+      display: none;
+    }
+    .col-sm-1 {
+      width: calcGridCellWidthWithGutter(1, 12, $gutter-horizontal);
+    }
+    .col-sm-2 {
+      width: calcGridCellWidthWithGutter(2, 12, $gutter-horizontal);
+    }
+    .col-sm-3 {
+      width: calcGridCellWidthWithGutter(3, 12, $gutter-horizontal);
+    }
+    .col-sm-4 {
+      width: calcGridCellWidthWithGutter(4, 12, $gutter-horizontal);
+    }
+    .col-sm-5 {
+      width: calcGridCellWidthWithGutter(5, 12, $gutter-horizontal);
+    }
+    .col-sm-6 {
+      width: calcGridCellWidthWithGutter(6, 12, $gutter-horizontal);
+    }
+    .col-sm-7 {
+      width: calcGridCellWidthWithGutter(7, 12, $gutter-horizontal);
+    }
+    .col-sm-8 {
+      width: calcGridCellWidthWithGutter(8, 12, $gutter-horizontal);
+    }
+    .col-sm-9 {
+      width: calcGridCellWidthWithGutter(9, 12, $gutter-horizontal);
+    }
+    .col-sm-10 {
+      width: calcGridCellWidthWithGutter(10, 12, $gutter-horizontal);
+    }
+    .col-sm-11 {
+      width: calcGridCellWidthWithGutter(11, 12, $gutter-horizontal);
+    }
+    .col-sm-12 {
+      width: calc(100% - #{$gutter-horizontal});
+    }
+  }
+  .row-no-gutters {
+    [class*="col-sm-"] {
+      display: inherit;
+      opacity: 1;
+    }
+    .col-sm-show {
+      display: block;
+    }
+    .col-sm-invisible {
+      opacity: 0;
+    }
+    .col-sm-0 {
+      display: none;
+    }
+    .col-sm-1 {
+      width: calcGridCellWidthNoGutter(1, 12);
+    }
+    .col-sm-2 {
+      width: calcGridCellWidthNoGutter(2, 12);
+    }
+    .col-sm-3 {
+      width: calcGridCellWidthNoGutter(3, 12);
+    }
+    .col-sm-4 {
+      width: calcGridCellWidthNoGutter(4, 12);
+    }
+    .col-sm-5 {
+      width: calcGridCellWidthNoGutter(5, 12);
+    }
+    .col-sm-6 {
+      width: calcGridCellWidthNoGutter(6, 12);
+    }
+    .col-sm-7 {
+      width: calcGridCellWidthNoGutter(7, 12);
+    }
+    .col-sm-8 {
+      width: calcGridCellWidthNoGutter(8, 12);
+    }
+    .col-sm-9 {
+      width: calcGridCellWidthNoGutter(9, 12);
+    }
+    .col-sm-10 {
+      width: calcGridCellWidthNoGutter(10, 12);
+    }
+    .col-sm-11 {
+      width: calcGridCellWidthNoGutter(11, 12);
+    }
+    .col-sm-12 {
+      width: calc(100% - #{$gutter-horizontal});
+    }
+  }
+}
+
+@media only screen and (max-width: $xs) {
+  .container-flex {
+    max-width: calc(100% - #{$container-flex-min-lat-spacing});
+  }
+  .row {
+    [class*="col-xs-"] {
+      display: inherit;
+      opacity: 1;
+    }
+    .col-xs-show {
+      display: block;
+    }
+    .col-xs-invisible {
+      opacity: 0;
+    }
+    .col-xs-0 {
+      display: none;
+    }
+    .col-xs-1 {
+      width: calcGridCellWidthWithGutter(1, 12, $gutter-horizontal);
+    }
+    .col-xs-2 {
+      width: calcGridCellWidthWithGutter(2, 12, $gutter-horizontal);
+    }
+    .col-xs-3 {
+      width: calcGridCellWidthWithGutter(3, 12, $gutter-horizontal);
+    }
+    .col-xs-4 {
+      width: calcGridCellWidthWithGutter(4, 12, $gutter-horizontal);
+    }
+    .col-xs-5 {
+      width: calcGridCellWidthWithGutter(5, 12, $gutter-horizontal);
+    }
+    .col-xs-6 {
+      width: calcGridCellWidthWithGutter(6, 12, $gutter-horizontal);
+    }
+    .col-xs-7 {
+      width: calcGridCellWidthWithGutter(7, 12, $gutter-horizontal);
+    }
+    .col-xs-8 {
+      width: calcGridCellWidthWithGutter(8, 12, $gutter-horizontal);
+    }
+    .col-xs-9 {
+      width: calcGridCellWidthWithGutter(9, 12, $gutter-horizontal);
+    }
+    .col-xs-10 {
+      width: calcGridCellWidthWithGutter(10, 12, $gutter-horizontal);
+    }
+    .col-xs-11 {
+      width: calcGridCellWidthWithGutter(11, 12, $gutter-horizontal);
+    }
+    .col-xs-12 {
+      width: calc(100% - #{$gutter-horizontal});
+    }
+  }
+  .row-no-gutters {
+    [class*="col-xs-"] {
+      display: inherit;
+      opacity: 1;
+    }
+    .col-xs-show {
+      display: block;
+    }
+    .col-xs-invisible {
+      opacity: 0;
+    }
+    .col-xs-0 {
+      display: none;
+    }
+    .col-xs-1 {
+      width: calcGridCellWidthNoGutter(1, 12);
+    }
+    .col-xs-2 {
+      width: calcGridCellWidthNoGutter(2, 12);
+    }
+    .col-xs-3 {
+      width: calcGridCellWidthNoGutter(3, 12);
+    }
+    .col-xs-4 {
+      width: calcGridCellWidthNoGutter(4, 12);
+    }
+    .col-xs-5 {
+      width: calcGridCellWidthNoGutter(5, 12);
+    }
+    .col-xs-6 {
+      width: calcGridCellWidthNoGutter(6, 12);
+    }
+    .col-xs-7 {
+      width: calcGridCellWidthNoGutter(7, 12);
+    }
+    .col-xs-8 {
+      width: calcGridCellWidthNoGutter(8, 12);
+    }
+    .col-xs-9 {
+      width: calcGridCellWidthNoGutter(9, 12);
+    }
+    .col-xs-10 {
+      width: calcGridCellWidthNoGutter(10, 12);
+    }
+    .col-xs-11 {
+      width: calcGridCellWidthNoGutter(11, 12);
+    }
+    .col-xs-12 {
+      width: 100%;
+    }
+  }
+}

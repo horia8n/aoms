@@ -1,0 +1,31 @@
+.header {
+  background-color: #fff; }
+
+.footer {
+  background-color: #333; }
+
+.header {
+  border-bottom: 1px solid #ccc; }
+  .header .header-col {
+    background: none;
+    height: 100%;
+    margin-bottom: 0; }
+  .header .logo {
+    text-align: left;
+    background: none;
+    padding-top: 20px; }
+    .header .logo img {
+      width: 194px;
+      height: auto; }
+  .header .logo2 {
+    background: none; }
+    .header .logo2 img {
+      top: 0;
+      right: 0;
+      width: 56px;
+      height: auto; }
+
+.footer .footer-col {
+  height: 100%; }
+
+/*# sourceMappingURL=theme.css.map */

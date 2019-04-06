@@ -1,0 +1,95 @@
+@import "grid";
+
+section, .section {
+  display: block;
+  margin: 0 auto 4*$gutter-vertical;
+  @include clearfix;
+}
+
+.container {
+  padding: 0 $gutter-horizontal;
+}
+
+.container-vertical-gutters, .c-v-g {
+  padding: $gutter-vertical $gutter-horizontal;
+}
+
+.absolute, .p-a {
+  position: absolute;
+}
+
+.relative, .p-r {
+  position: relative;
+}
+
+.text-content, t-c {
+  text-align: justify;
+  margin-right: $gutter-horizontal;
+  line-height: 30px;
+  margin-bottom: $gutter-vertical;
+}
+
+.align-justify, .a-j {
+  text-align: justify;
+}
+
+.align-right, .a-r {
+  text-align: right;
+}
+
+.align-left, .a-l {
+  text-align: left;
+}
+
+.align-center, .a-c {
+  text-align: center;
+}
+
+.align-top, .a-t {
+  vertical-align: top;
+}
+
+.align-middle, .a-m {
+  vertical-align: middle;
+}
+
+.align-bottom, .a-b {
+  vertical-align: bottom;
+}
+
+.gutter-top, .g-t {
+  margin-top: $gutter-vertical;
+}
+
+.gutter-top-double, .g-t-d {
+  margin-top: 2*$gutter-vertical;
+}
+
+.gutter-top-section, .g-t-d {
+  margin-top: 4*$gutter-vertical;
+}
+
+.gutter-bottom, .g-b {
+  margin-bottom: $gutter-vertical;
+}
+
+.gutter-bottom-double, .g-b-d {
+  margin-bottom: 2*$gutter-vertical;
+}
+
+.float-left, .f-l {
+  float: left;
+}
+
+.float-right, .f-r {
+  float: right;
+  margin-left: $gutter-horizontal;
+}
+
+.width-block {
+  width: 100%;
+}
+
+img.width-block {
+  height: auto;
+}

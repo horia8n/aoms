@@ -1,0 +1,124 @@
+.contentBeforeData {
+  display: block;
+  height: 100px;
+
+}
+
+.dataWrapper {
+  display: block;
+  background-color: #eee;
+  padding: 10px 1px 2px 30px;
+  text-align: left;
+  .mesurements {
+    display: block;
+    background-color: #fff;
+    padding-top: 1px;
+    hr {
+      border-top: 1px solid #dddddd;
+    }
+    h4 {
+      padding-left: 20px;
+      font-size: 14px;
+      margin: 11px 0 12px;
+    }
+    .threedot {
+      float: right;
+      width: 20px;
+      font-size: 14px;
+    }
+    .topButtons {
+      margin: 15px 0 2px 20px;
+      .button {
+        border: 1px solid #ddd;
+        border-radius: 15px;
+        text-align: center;
+        height: 25px;
+        vertical-align: middle;
+        line-height: 25px;
+        cursor: pointer;
+        &.col-2 {
+          max-width: 100px;
+        }
+        &.col-md-3 {
+          max-width: 100%;
+        }
+      }
+      .Realtime {
+        border-color: #0093dd;
+        color: #0093dd;
+        &.selected {
+          background-color: #0093dd;
+        }
+      }
+      .Snapshot {
+        border-color: #ff942d;
+        color: #ff942d;
+        &.selected {
+          background-color: #ff942d;
+        }
+      }
+      .Historical {
+        border-color: #ee4663;
+        color: #ee4663;
+        &.selected {
+          background-color: #ee4663;
+        }
+      }
+      .selected {
+        color: #fff;
+      }
+    }
+    .topSelects {
+      margin: 0 0 0 20px;
+      hr {
+        margin-top: 10px;
+      }
+      label {
+        font-size: 12px;
+        margin: 0 auto -2px;
+      }
+      select {
+        height: 25px;
+        margin-bottom: 0;
+        font-size: 10px;
+      }
+    }
+    .chartArea {
+      margin: 0 0 0 20px;
+      position: relative;
+      .left {
+        //position: absolute;
+        height: 100%;
+        line-height: 100%;
+        .wrapper {
+          position: absolute;
+          //margin-top: 218px;
+          bottom: 48px;
+        }
+      }
+      .right {
+        .scaleLabel {
+          font-size: 12px;
+          margin: 0 0 0 34px;
+        }
+      }
+    }
+    .bottomButtons {
+      margin: 0 20px;
+      padding-bottom: 24px;
+      .button {
+        text-align: center;
+        background-color: #0093dd;
+        color: #fff;
+        height: 30px;
+        vertical-align: middle;
+        line-height: 30px;
+        border-radius: 4px;
+      }
+      select {
+        height: 30px;
+
+      }
+    }
+  }
+}

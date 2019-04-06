@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="72px" viewBox="0 0 56 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Location Button</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0,0 L56,0 L56,64 L0,64 L0,0 Z M0,64 L56,64 L56,72 L28,68 L0,72 L0,64 Z" id="path-1"></path>
+        <filter x="-6.2%" y="-3.5%" width="112.5%" height="109.7%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.25 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <filter x="-5.4%" y="-2.8%" width="110.7%" height="108.3%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="-2" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.247169384 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Location-Button">
+            <g id="Group-2">
+                <g id="Rectangle-3">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#D60008" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                </g>
+                <g id="Icon-/-Map-Pin-/-Dark" transform="translate(12.000000, 6.000000)">
+                    <rect id="Rectangle-2" x="0" y="0" width="32" height="32"></rect>
+                    <path d="M16,16 C13.791,16 12,14.209 12,12 C12,9.791 13.791,8 16,8 C18.209,8 20,9.791 20,12 C20,14.209 18.209,16 16,16 M16,4 C11.582,4 8,7.582 8,12 C8,20 16,28 16,28 C16,28 24,20 24,12 C24,7.582 20.418,4 16,4" id="Path" fill="#FFFFFF" fill-rule="evenodd"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

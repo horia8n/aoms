@@ -1,0 +1,16 @@
+$header-background: #fff;
+$footer-background: #333;
+$carbon: #888;
+
+.header {
+  background-color: $header-background;
+}
+
+.text-content {
+  color: $carbon;
+}
+
+.footer {
+  background-color: $footer-background;
+}
+
